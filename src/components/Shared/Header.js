@@ -1,22 +1,32 @@
 import React, { useState } from 'react';
-import { TbWaveSquare } from 'react-icons/fa';
+import { TbWaveSquare } from 'react-icons/tb';
+import { AiOutlineSearch } from 'react-icons/ai';
+import { AiOutlineShoppingCart } from 'react-icons/ai';
+import { BiUser } from 'react-icons/bi';
 const Header = () => {
     const [navbar, setNavbar] = useState(false);
     return (
-        <nav className="w-full bg-purple-500 shadow">
+        <nav className="w-full bg-base-100 shadow ">
             <div className="justify-between px-4 mx-auto lg:max-w-7xl lg:items-center lg:flex lg:px-8">
                 <div>
                     <div className="flex items-center justify-between py-3 lg:py-5 lg:block">
-                       div
+                        <div className='flex items-center text-2xl font-bold'>
+                            <p>
+                                <TbWaveSquare
+                                    className='w-30px mr-2'
+                                />
+                            </p>
+                            <h1><span className='text-[#efd353] '>E-</span> Shop</h1>
+                        </div>
                         <div className="lg:hidden">
                             <button
-                                className="p-2 text-gray-700 rounded-lg outline-none focus:border-gray-400 focus:border"
+                                className="p-2 text-black rounded-lg"
                                 onClick={() => setNavbar(!navbar)}
                             >
                                 {navbar ? (
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
-                                        className="w-6 h-6 text-white"
+                                        className="w-6 h-6 text-black"
                                         viewBox="0 0 20 20"
                                         fill="currentColor"
                                     >
@@ -29,7 +39,7 @@ const Header = () => {
                                 ) : (
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
-                                        className="w-6 h-6 text-white"
+                                        className="w-6 h-6 text-black"
                                         fill="none"
                                         viewBox="0 0 24 24"
                                         stroke="currentColor"
@@ -48,58 +58,53 @@ const Header = () => {
                 </div>
                 <div>
                     <div
-                        className={`flex-1 justify-self-center pb-3 mt-8 lg:block lg:pb-0 lg:mt-0 ${
-                            navbar ? "block" : "hidden"
-                        }`}
+                        className={`flex-1 justify-self-center pb-3 mt-8 lg:block lg:pb-0 lg:mt-0 ${navbar ? "block" : "hidden"
+                            }`}
                     >
-                        <ul className="items-center justify-center space-y-8 lg:flex lg:space-x-6 lg:space-y-0">
-                            <li className="text-white hover:text-indigo-200">
-                                <a href="javascript:void(0)">Home</a>
+                        <ul className="items-center justify-center space-y-8 lg:flex lg:space-x-6 lg:space-y-0 ">
+                            <li className="text-black hover:text-indigo-200">
+                                Men
                             </li>
-                            <li className="text-white hover:text-indigo-200">
-                                <a href="javascript:void(0)">Blog</a>
+                            <li className="text-black hover:text-indigo-200">
+                                Women
                             </li>
-                            <li className="text-white hover:text-indigo-200">
-                                <a href="javascript:void(0)">About US</a>
+                            <li className="text-black hover:text-indigo-200">
+                                Kids
                             </li>
-                            <li className="text-white hover:text-indigo-200">
-                                <a href="javascript:void(0)">Contact US</a>
-                            </li>
+
                         </ul>
 
-                        <div className="mt-3 space-y-2 lg:hidden lg:inline-block">
-                    <a
-                        href="javascript:void(0)"
-                        className="inline-block w-full px-4 py-2 text-center text-white bg-gray-600 rounded-lg shadow hover:bg-gray-800"
-                    >
-                        Sign in
-                    </a>
-                    <a
-                        href="javascript:void(0)"
-                        className="inline-block w-full px-4 py-2 text-center text-gray-800 bg-white rounded-lg shadow hover:bg-gray-100"
-                    >
-                        Sign up
-                    </a>
-                </div>
+                        <div className=" space-y-2 lg:hidden mt-9 pb-5">
+                            <div className='flex justify-center text-[18px]' >
+                                <div>
+                                    <AiOutlineSearch />
+                                </div>
+                                <div className='mx-9'>
+                                    <AiOutlineShoppingCart />
+                                </div>
+                                <div>
+                                    <BiUser />
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div className="hidden space-x-2 lg:inline-block">
-                    <a
-                        href="javascript:void(0)"
-                        className="px-4 py-2 text-white bg-gray-600 rounded-lg shadow hover:bg-gray-800"
-                    >
-                        Sign in
-                    </a>
-                    <a
-                        href="javascript:void(0)"
-                        className="px-4 py-2 text-gray-800 bg-white rounded-lg shadow hover:bg-gray-100"
-                    >
-                        Sign up
-                    </a>
+                    <div className='flex justify-between text-xl'>
+                        <div>
+                            <AiOutlineSearch />
+                        </div>
+                        <div className='mx-4'>
+                            <AiOutlineShoppingCart />
+                        </div>
+                        <div>
+                            <BiUser />
+                        </div>
+                    </div>
                 </div>
-                
+
             </div>
-        </navbar>
+        </nav>
     );
 };
 

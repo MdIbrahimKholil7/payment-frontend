@@ -1,6 +1,7 @@
 import React from 'react';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { MdOutlineLocalShipping } from 'react-icons/md';
+import Cart from '../Pages/ShippingAndPayment.js/Cart';
 import PaymentMethods from '../Pages/ShippingAndPayment.js/PaymentMethods';
 import ShippingInformation from '../Pages/ShippingAndPayment.js/ShippingInformation';
 const Home = () => {
@@ -28,6 +29,7 @@ const Home = () => {
                 <div className='grid grid-cols-3 gap-6 mt-7'>
                     <ShippingInformation/>
                     <PaymentMethods/>
+                    <Cart/>
                 </div>
             </div>
         </div>

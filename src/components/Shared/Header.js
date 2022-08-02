@@ -7,7 +7,7 @@ const Header = () => {
     const [navbar, setNavbar] = useState(false);
     return (
         <nav className="w-full bg-base-100 shadow ">
-            <div className="justify-between px-4 mx-auto lg:max-w-7xl lg:items-center lg:flex lg:px-8">
+            <div className="justify-between px-4 mx-auto lg:max-w-7xl lg:items-center lg:flex lg:px-4">
                 <div>
                     <div className="flex items-center justify-between py-3 lg:py-5 lg:block">
                         <div className='flex items-center text-2xl font-bold'>

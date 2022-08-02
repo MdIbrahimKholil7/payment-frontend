@@ -10,12 +10,12 @@ const Cart = () => {
                 <div className='flex justify-between items-center mb-9 pr-5'>
                     <div className='flex items-center'>
                         <div className=''>
-                            <img className='w-[100px] rounded-full h-[90px]  object-cover' src={tshirt1} alt="" />
+                            <img className='sm:w-[100px] w-[70px] rounded-full h-[90px]  object-cover' src={tshirt1} alt="" />
                         </div>
                         <div>
-                            <h1 className='text-[17px]'>T-Shirt </h1>
-                            <h1 className='text-[17px]'>Summer Vibes</h1>
-                            <p className='text-[#a5a0a0]'>#261311</p>
+                            <h1 className='sm:text-[17px] text-[14px]'>T-Shirt </h1>
+                            <h1 className='sm:text-[17px] text-[14px]'>Summer Vibes</h1>
+                            <p className='text-[#a5a0a0] text-[14px]'>#261311</p>
                         </div>
                     </div>
                     <div>
@@ -25,12 +25,12 @@ const Cart = () => {
                 <div className='flex justify-between items-center pr-5'>
                     <div className='flex items-center'>
                         <div className=''>
-                            <img className='w-[90px] rounded-full h-[90px]  object-cover' src={tshirt2} alt="" />
+                            <img className='sm:w-[90px] w-[70px] rounded-full h-[90px]  object-cover' src={tshirt2} alt="" />
                         </div>
                         <div>
-                            <h1 className='text-[17px]'>T-Shirt </h1>
-                            <h1 className='text-[17px]'>Summer Vibes</h1>
-                            <p className='text-[#a5a0a0]'>#261311</p>
+                            <h1 className='sm:text-[17px] text-[14px]'>T-Shirt </h1>
+                            <h1 className='sm:text-[17px] text-[14px]'>Summer Vibes</h1>
+                            <p className='text-[#a5a0a0] text-[14px]'>#261311</p>
                         </div>
                     </div>
                     <div>
@@ -38,8 +38,8 @@ const Cart = () => {
                     </div>
                 </div>
 
-                <div className='mt-16'>
-                    <button className='flex px-5 text-[18px] py-3 rounded-[99px] bg-[#dad3d3] justify-between items-center'><span className='mr-9'>Total Cost</span> $<span>159.99</span></button>
+                <div className='mt-16 flex justify-center sm:justify-start'>
+                    <button className='flex px-5 sm:text-[18px] text-[15px] py-3 rounded-[99px] bg-[#dad3d3] justify-between items-center'><span className='mr-9'>Total Cost</span> $<span>159.99</span></button>
                 </div>
 
                 <div>
@@ -47,7 +47,7 @@ const Cart = () => {
                         <span className='text-4xl'>
                             <MdOutlineLocalShipping/>
                         </span>
-                        <p className='text-xl pr-40'>You are $30,02 away from free shipping</p>
+                        <p className='sm:text-xl text-[15px] pr-40'>You are $30,02 away from free shipping</p>
                     </div>
                 </div>
             </div>

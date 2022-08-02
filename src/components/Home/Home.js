@@ -27,22 +27,22 @@ const Home = () => {
                     </div>
                 </div>
 
-                <div className='grid grid-cols-3 gap-6 mt-7'>
+                <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1  md:gap-6 xl:gap-9 gap-7 mt-7'>
                     <ShippingInformation />
                     <PaymentMethods />
                     <Cart />
                 </div>
 
-                <div className='flex justify-between items-center mt-16'>
+                <div className='flex justify-between flex-col sm:flex-row items-center mt-16 mb-7'>
                     <div className='flex items-center'>
                         <BiArrowBack
                         className='text-2xl mr-9'
                         />
                         <p>Back</p>
                     </div>
-                    <div className='text-left flex gap-3 '>
-                        <button className='border-[1px] border-[#0bec59df] border-solid rounded-[99px] py-2 px-6 uppercase'>Continue Shopping</button>
-                        <button className='bg-[#0bec59df] py-2 px-6 rounded-[99px] text-white uppercase'>Proceed to Payment</button>
+                    <div className='text-left flex gap-3 mt-7 sm:mt-0'>
+                        <button className='border-[1px] border-[#0bec59df] border-solid rounded-[99px] sm:py-2 py-3 text-[14px] sm:px-6 uppercase px-4'>Continue Shopping</button>
+                        <button className='bg-[#0bec59df] sm:py-2 py-3 sm:px-6 px-4 rounded-[99px] text-white text-[14px] uppercase'>Proceed to Payment</button>
                     </div>
                 </div>
             </div>

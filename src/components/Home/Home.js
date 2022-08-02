@@ -25,7 +25,7 @@ const Home = () => {
                     </div>
                 </div>
 
-                <div className='grid grid-cols-3 gap-3 mt-7'>
+                <div className='grid grid-cols-3 gap-6 mt-7'>
                     <ShippingInformation/>
                     <PaymentMethods/>
                 </div>

@@ -1,16 +1,13 @@
 import React, { useState } from 'react';
-
+import { TbWaveSquare } from 'react-icons/fa';
 const Header = () => {
     const [navbar, setNavbar] = useState(false);
-
     return (
         <nav className="w-full bg-purple-500 shadow">
             <div className="justify-between px-4 mx-auto lg:max-w-7xl lg:items-center lg:flex lg:px-8">
                 <div>
                     <div className="flex items-center justify-between py-3 lg:py-5 lg:block">
-                        <a href="javascript:void(0)">
-                            <h2 className="text-2xl font-bold text-white">LOGO</h2>
-                        </a>
+                       div
                         <div className="lg:hidden">
                             <button
                                 className="p-2 text-gray-700 rounded-lg outline-none focus:border-gray-400 focus:border"
@@ -100,8 +97,9 @@ const Header = () => {
                         Sign up
                     </a>
                 </div>
+                
             </div>
-        </nav>
+        </navbar>
     );
 };
 

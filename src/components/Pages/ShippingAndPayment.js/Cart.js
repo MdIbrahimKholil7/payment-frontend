@@ -2,7 +2,9 @@ import React from 'react';
 import tshirt1 from '../../../assets/tshirt-images/tshirt-1.png'
 import tshirt2 from '../../../assets/tshirt-images/tshirt-2.png'
 import { MdOutlineLocalShipping } from 'react-icons/md';
-const Cart = () => {
+const Cart = ({setAmount}) => {
+
+    setAmount(159.99)
     return (
         <div>
             <h1 className='mb-7 text-xl'>Your Cart</h1>

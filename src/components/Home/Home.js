@@ -1,11 +1,86 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { MdOutlineLocalShipping } from 'react-icons/md';
 import { BiArrowBack } from 'react-icons/bi';
 import Cart from '../Pages/ShippingAndPayment.js/Cart';
 import PaymentMethods from '../Pages/ShippingAndPayment.js/PaymentMethods';
 import ShippingInformation from '../Pages/ShippingAndPayment.js/ShippingInformation';
+import axios from 'axios';
 const Home = () => {
+    const [amount, setAmount] = useState(0)
+   
+    const handlePayment=async(amount)=>{
+       
+        // get key 
+        const {data:{key}}=await axios.get(`http://localhost:5000/api/key`)
+    
+        const {data}=await axios.post(`http://localhost:5000/api/checkout`,{amount})
+        console.log(data)
+        console.log(window)
+        
+       /*  const options = {
+            key, 
+            amount: data?.amount, 
+            currency: "INR",
+            name: "Chris Hemsworth",
+            description: "Test Transaction",
+            image: "https://avatars.githubusercontent.com/u/96829086?v=4",
+            order_id:data?.id,
+            // callback_url: ,
+            prefill: {
+                name: "Gaurav Kumar",
+                email: "gaurav.kumar@example.com",
+                contact: "9999999999"
+            },
+            notes: {
+                "address": "Razorpay Corporate Office"
+            },
+            theme: {
+                color: "#1f2123"
+            }
+        };
+        const razor= new window.Razorpay(options);
+            razor.open();   */  
+        
+
+            var options = {
+                key, // Enter the Key ID generated from the Dashboard
+                amount: data.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+                currency: "INR",
+                name: "Acme Corp",
+                description: "Test Transaction",
+                image: "https://example.com/your_logo",
+                order_id: data.id, 
+                handler:async function (response){
+                   const {data}=await axios.post("http://localhost:5000/api/payment-verification",{response})
+                   console.log(data)
+                },
+                prefill: {
+                    name: "Gaurav Kumar",
+                    email: "gaurav.kumar@example.com",
+                    contact: "9999999999"
+                },
+                notes: {
+                    address: "Razorpay Corporate Office"
+                },
+                theme: {
+                    color: "#3399cc"
+                }
+            };
+            var razor = new window.Razorpay(options);
+            razor.on('payment.failed', function (response){
+                    alert(response.error.code);
+                    alert(response.error.description);
+                    alert(response.error.source);
+                    alert(response.error.step);
+                    alert(response.error.reason);
+                    alert(response.error.metadata.order_id);
+                    alert(response.error.metadata.payment_id);
+            });
+        
+                razor.open();
+            
+    }
     return (
         <div className='max-w-[1586px] mx-auto px-4'>
             <div >
@@ -30,7 +105,9 @@ const Home = () => {
                 <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1  md:gap-6 xl:gap-9 gap-7 mt-7'>
                     <ShippingInformation />
                     <PaymentMethods />
-                    <Cart />
+                    <Cart 
+                    setAmount={setAmount}
+                    />
                 </div>
 
                 <div className='flex justify-between flex-col sm:flex-row items-center mt-16 mb-7'>
@@ -42,7 +119,7 @@ const Home = () => {
                     </div>
                     <div className='text-left flex gap-3 mt-7 sm:mt-0'>
                         <button className='border-[1px] border-[#0bec59df] border-solid rounded-[99px] sm:py-2 py-3 text-[14px] sm:px-6 uppercase px-4'>Continue Shopping</button>
-                        <button className='bg-[#0bec59df] sm:py-2 py-3 sm:px-6 px-4 rounded-[99px] text-white text-[14px] uppercase'>Proceed to Payment</button>
+                        <button onClick={()=>handlePayment(amount)} className='bg-[#0bec59df] sm:py-2 py-3 sm:px-6 px-4 rounded-[99px] text-white text-[14px] uppercase' >Proceed to Payment</button>
                     </div>
                 </div>
             </div>

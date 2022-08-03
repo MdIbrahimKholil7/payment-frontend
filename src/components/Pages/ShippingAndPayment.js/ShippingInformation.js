@@ -1,13 +1,15 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const ShippingInformation = () => {
+    const navigate=useNavigate()
     return (
         <div className=''>
             <div>
                 <div>
                     <div className='text-left flex gap-3'>
-                        <button className='bg-[#0bec59df] py-2 px-6 rounded-[99px] text-white uppercase'>Log In</button>
-                        <button className='border-[1px] border-[#0bec59df] border-solid rounded-[99px] py-2 px-6 uppercase'>Sign Up</button>
+                        <button onClick={()=>navigate('/login')} className='bg-[#0bec59df] py-2 px-6 rounded-[99px] text-white uppercase'>Log In</button>
+                        <button onClick={()=>navigate('/signup')} className='border-[1px] border-[#0bec59df] border-solid rounded-[99px] py-2 px-6 uppercase'>Sign Up</button>
                     </div>
                     <div className='mt-9'>
                         <h1 className='mb-5'>Shipping Information</h1>

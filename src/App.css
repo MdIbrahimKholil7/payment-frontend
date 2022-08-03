@@ -1,0 +1,16 @@
+.social-icon{
+    font-size: 3rem;
+    margin-left: 1rem;
+}
+.icon-btn{
+    border: none;
+    width: 70%;
+    padding: 1rem 2rem;
+    text-align: center;
+    color: #fff;
+    font-size: 1.7rem;
+    background: #1b0b5dde;
+    margin: auto;
+    display: block;
+    border-radius: .5rem;
+}

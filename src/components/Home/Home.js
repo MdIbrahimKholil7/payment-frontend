@@ -36,7 +36,7 @@ const Home = () => {
                 image: "https://example.com/your_logo",
                 order_id: data.id, 
                 handler:async function (response){
-                   const {data}=await axios.post("http://localhost:5000/api/payment-verification",{response})
+                   const {data}=await axios.post("http://localhost:5000/api/payment-verification",{response,email:user?.email})
                    console.log(data)
                 },
                 prefill: {

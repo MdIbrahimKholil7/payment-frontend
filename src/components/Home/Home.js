@@ -23,9 +23,7 @@ const Home = () => {
         const {data:{key}}=await axios.get(`https://powerful-headland-79331.herokuapp.com/api/key`)
     
         const {data}=await axios.post(`https://powerful-headland-79331.herokuapp.com/api/checkout`,{amount})
-        console.log(data)
-        console.log(window)
-        
+    
      
             var options = {
                 key, 
@@ -38,6 +36,9 @@ const Home = () => {
                 handler:async function (response){
                    const {data}=await axios.post("http://localhost:5000/api/payment-verification",{response,email:user?.email})
                    console.log(data)
+                   if(data.success){
+                    navigate('/success')
+                   }
                 },
                 prefill: {
                     name: "Gaurav Kumar",

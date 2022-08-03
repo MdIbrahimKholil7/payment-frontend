@@ -3,8 +3,12 @@ import { TbWaveSquare } from 'react-icons/tb';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { BiUser } from 'react-icons/bi';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../_firebase.init';
+import { signOut } from 'firebase/auth';
 const Header = () => {
     const [navbar, setNavbar] = useState(false);
+    const [user]=useAuthState(auth)
     return (
         <nav className="w-full bg-base-100 shadow ">
             <div className="justify-between px-4 mx-auto lg:max-w-7xl lg:items-center lg:flex lg:px-4">
@@ -90,7 +94,12 @@ const Header = () => {
                     </div>
                 </div>
                 <div className="hidden space-x-2 lg:inline-block">
-                    <div className='flex justify-between text-xl'>
+                    <div className='flex justify-between items-center text-xl'>
+                       {
+                        user &&  <div className='mr-4'>
+                        <button onClick={()=>signOut(auth)} className='btn btn-primary rounded-full'>Log Out</button>
+                    </div>
+                       }
                         <div>
                             <AiOutlineSearch />
                         </div>

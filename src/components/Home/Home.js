@@ -28,7 +28,7 @@ const Home = () => {
                 image: "https://example.com/your_logo",
                 order_id: data.id, 
                 handler:async function (response){
-                   const {data}=await axios.post("https://powerful-headland-79331.herokuapp.com/api/payment-verification",{response})
+                   const {data}=await axios.post("http://localhost:5000/api/payment-verification",{response})
                    console.log(data)
                 },
                 prefill: {

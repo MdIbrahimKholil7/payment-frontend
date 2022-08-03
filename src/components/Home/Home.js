@@ -12,47 +12,23 @@ const Home = () => {
     const handlePayment=async(amount)=>{
        
         // get key 
-        const {data:{key}}=await axios.get(`http://localhost:5000/api/key`)
+        const {data:{key}}=await axios.get(`https://powerful-headland-79331.herokuapp.com/api/key`)
     
-        const {data}=await axios.post(`http://localhost:5000/api/checkout`,{amount})
+        const {data}=await axios.post(`https://powerful-headland-79331.herokuapp.com/api/checkout`,{amount})
         console.log(data)
         console.log(window)
         
-       /*  const options = {
-            key, 
-            amount: data?.amount, 
-            currency: "INR",
-            name: "Chris Hemsworth",
-            description: "Test Transaction",
-            image: "https://avatars.githubusercontent.com/u/96829086?v=4",
-            order_id:data?.id,
-            // callback_url: ,
-            prefill: {
-                name: "Gaurav Kumar",
-                email: "gaurav.kumar@example.com",
-                contact: "9999999999"
-            },
-            notes: {
-                "address": "Razorpay Corporate Office"
-            },
-            theme: {
-                color: "#1f2123"
-            }
-        };
-        const razor= new window.Razorpay(options);
-            razor.open();   */  
-        
-
+     
             var options = {
-                key, // Enter the Key ID generated from the Dashboard
-                amount: data.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+                key, 
+                amount: data.amount, 
                 currency: "INR",
                 name: "Acme Corp",
                 description: "Test Transaction",
                 image: "https://example.com/your_logo",
                 order_id: data.id, 
                 handler:async function (response){
-                   const {data}=await axios.post("http://localhost:5000/api/payment-verification",{response})
+                   const {data}=await axios.post("https://powerful-headland-79331.herokuapp.com/api/payment-verification",{response})
                    console.log(data)
                 },
                 prefill: {

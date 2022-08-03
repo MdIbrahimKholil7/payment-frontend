@@ -35,7 +35,7 @@ const SignUp = () => {
                 <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <div class="card-body">
                         <form onSubmit={handleSubmit}>
-                            
+                            <h1 className='text-xl mb-7 text-center'>Please Login</h1>
                             <div class="form-control">
                                 <label class="label">
                                     <span class="label-text">Email</span>

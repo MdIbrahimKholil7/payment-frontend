@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
-import { useAuthState, useSignInWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
+import React from 'react';
+import {  useSignInWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../../_firebase.init'
 import Social from '../Social/Social';
-
 
 const SignUp = () => {
 

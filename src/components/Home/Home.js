@@ -6,11 +6,19 @@ import Cart from '../Pages/ShippingAndPayment.js/Cart';
 import PaymentMethods from '../Pages/ShippingAndPayment.js/PaymentMethods';
 import ShippingInformation from '../Pages/ShippingAndPayment.js/ShippingInformation';
 import axios from 'axios';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../_firebase.init';
+import { useNavigate } from 'react-router-dom';
 const Home = () => {
     const [amount, setAmount] = useState(0)
-   
+    const [user]=useAuthState(auth)
+    const navigate=useNavigate()
     const handlePayment=async(amount)=>{
        
+
+        if (!user){
+            return navigate('/login')
+        }
         // get key 
         const {data:{key}}=await axios.get(`https://powerful-headland-79331.herokuapp.com/api/key`)
     

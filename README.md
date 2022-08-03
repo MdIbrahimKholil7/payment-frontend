@@ -1,20 +1,12 @@
 
 ## Server site link https://github.com/MdIbrahimKholil7/payment-backend
-## Website link (https://parts-mania.web.app)
-## My website feature
-- You can buy product
-- Update and delete product
-- You can see all product in dashboard page
-- You can set your profile
+## Live link https://payment-task-aa389.web.app/
+## Website feature
+- User can buy product
 - You can pay for the product to your bank account
-- User can also give review
-- This website has also admin panel
-- Admin can also add or remove any product
-- Admin can also make admin or remove any user from the user list
--
+- You have to sign up first for buy any product
 ### Which technology i have used in the site
 - html & css3
-- bootstrap 5
 - tailwind css
 - javascript 
 - react js
@@ -22,4 +14,5 @@
 - heroku 
 - node js
 - express js
+- mongoose
 - store data in the mongodb
